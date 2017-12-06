@@ -236,6 +236,7 @@ namespace SecCsChatBotDemo
             }
             else if (activity.Type == ActivityTypes.Message)
             {
+                //uploadTEST
                 //await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
                 Debug.WriteLine("* activity.Type == ActivityTypes.Message ");
 
