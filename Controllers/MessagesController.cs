@@ -256,8 +256,9 @@ namespace SecCsChatBotDemo
                 Debug.WriteLine("* luisId : " + cacheList.luisId);              // luisId
                 Debug.WriteLine("* Intent : " + cacheList.intentId);            // intentId
                 Debug.WriteLine("* Entity : " + cacheList.entitiesIds);         // entitiesId
-
+                
                 if(cacheList.luisId != null && cacheList.intentId != null && cacheList.entitiesIds != null){
+                    //캐시 테이블
                     List<LuisList> LuisDialogID = db.SelectLuis(cacheList.intentId, cacheList.entitiesIds);
                     Debug.WriteLine("* LuisDialogID.Count ==================================================== " + LuisDialogID.Count);
                     for (int i = 0; i < LuisDialogID.Count; i++)
@@ -436,6 +437,7 @@ namespace SecCsChatBotDemo
 
                     }
                 }else{
+                    //루이스
                     Luis = await GetIntentFromBotLUIS(orgMent);
                 
                     float luisScore = (float)Luis["intents"][0]["score"];
